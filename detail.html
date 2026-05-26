@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Biruk Gizaw</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="detail-page">
+    <header class="site-top" id="site-top">
+      <a class="site-top__back" href="index.html">Back</a>
+      <div class="site-top__menu" id="site-menu">
+        <button
+          type="button"
+          class="site-top__menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="menu-dropdown"
+        >
+          Menu
+        </button>
+        <nav class="site-menu__dropdown" id="menu-dropdown" aria-label="Site menu" hidden>
+          <a class="site-menu__item" href="index.html" data-menu-action="fashion">Fashion design</a>
+          <a class="site-menu__item" href="patches.html" data-menu-action="patches">Patches</a>
+          <button type="button" class="site-menu__item" data-menu-action="info">Info</button>
+        </nav>
+      </div>
+    </header>
+
+    <aside class="info-panel" id="info-panel" aria-hidden="true">
+      <div class="info-panel__image-wrap">
+        <div class="image-wrap" id="info-image-wrap">
+          <img id="info-image" alt="" />
+          <span class="image-reveal"></span>
+        </div>
+      </div>
+
+      <div class="info-panel__content">
+        <div class="info-panel__bio info-slide info-slide--1" id="info-bio"></div>
+        <div class="info-panel__meta">
+          <div class="info-slide info-slide--2" id="info-contact"></div>
+          <div class="info-panel__credits info-slide info-slide--3">
+            <ul>
+              <li>Design <a href="https://kalokyeung.com" target="_blank" rel="noopener noreferrer">Kalok Yeung</a></li>
+              <li>Code <a href="https://ezekielaquino.com" target="_blank" rel="noopener noreferrer">Ezekiel Aquino</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main id="root" aria-label="Outfit detail"></main>
+
+    <script src="data.js"></script>
+    <script src="shared.js"></script>
+    <script src="detail.js"></script>
+  </body>
+</html>
