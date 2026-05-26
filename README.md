@@ -36,3 +36,22 @@ You can also open `index.html` directly in a browser; some features work best ov
 This site is static. Host the repository root on [GitHub Pages](https://pages.github.com/), Netlify, Vercel, or any static host.
 
 For GitHub Pages: Settings → Pages → Deploy from branch `main` → folder `/ (root)`.
+
+## Publish to GitHub
+
+Git is initialized locally on branch `main` with an initial commit. To create the remote repository and push:
+
+1. Log in to GitHub (one time):
+
+   ```bash
+   gh auth login
+   ```
+
+2. Create the repo and push:
+
+   ```bash
+   cd simone-sniekers-clone
+   gh repo create biruk-gizaw-portfolio --public --source=. --remote=origin --push --description "Fashion portfolio for Biruk Gizaw"
+   ```
+
+Use `--private` instead of `--public` if you prefer a private repository. Pick any repo name you like in place of `biruk-gizaw-portfolio`.
