@@ -724,6 +724,7 @@ function setInfoOpen(open) {
   infoPanel.setAttribute('aria-hidden', String(!open));
   siteTop.classList.toggle('is-active', open);
   document.documentElement.classList.toggle('no-scroll', open);
+  setInfoPanelBackground(open);
   siteMenu?.updateToggleLabel();
 
   if (!open) {
@@ -746,6 +747,8 @@ function bindDetailColorTransitions() {
   if (articles.length === 0) return;
 
   const update = () => {
+    if (isInfoPanelBgActive()) return;
+
     let activeArticle = articles[0];
     let activeDistance = Infinity;
 

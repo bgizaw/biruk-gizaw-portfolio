@@ -243,13 +243,57 @@ MEDIA.forEach((item, index) => {
   item.isTop = Math.random() > 0.5;
 });
 
+const PATCHES = [
+  {
+    aside: '2026',
+    title: 'New York Knicks upcycled denim patch',
+    topColor: '#2A3548',
+    bottomColor: '#593a2a',
+    dominantColor: '#E8782E',
+    url: './assets/patch-knicks.png',
+    alt: 'Embroidered New York Knicks logo patch with orange KNICKS lettering and a basketball on a blue triangular background',
+    youtubeId: 'hd2agiiOhhc',
+    gallery: [],
+  },
+  {
+    aside: '2026',
+    title: 'Rolling Stones "Sticky Fingers" patch (5x7in)',
+    topColor: '#1E5C38',
+    bottomColor: '#593a2a',
+    dominantColor: '#D42020',
+    url: './assets/patch-4900.jpg',
+    alt: 'Rolling Stones red tongue and lips logo embroidered patch on a green cutting mat',
+    noDetail: true,
+  },
+  {
+    aside: '2026',
+    title: 'Upcycled three-eyed sun patch',
+    topColor: '#A89880',
+    bottomColor: '#593a2a',
+    dominantColor: '#F5C400',
+    url: './assets/patch-three-eyed-sun.jpg',
+    alt: 'Yellow sunburst-shaped embroidered patch with three sleepy eyes and a dark red tongue on tan textured fabric',
+    gallery: [],
+    noDetail: true,
+  },
+];
+
+PATCHES.forEach((item, index) => {
+  if (!item.gallery) {
+    item.gallery = [];
+  }
+  item.alignment = ALIGNMENTS[index];
+  item.isTop = Math.random() > 0.5;
+});
+
 const SITE = {
   name: 'Biruk Gizaw',
   subtitle: 'Fashion Designer & Tailor',
   description:
-    'Simone Sniekers is a fashion editor, stylist and creative producer based in Amsterdam. She focusses on bringing different disciplines together such as art, fashion and technology. Simone believes in an authentic way of creation, with sustainability at the core of every project she takes on.',
-  infoImage: sanityUrl('image-bb760c5572858dea24169f56b7b701fb81b9e843-3528x4704-jpg', 1200),
-  infoImageAlt: 'van vincent mules mulberry',
+    'Biruk Gizaw is a fashion designer, tailor, and fiber artist with a background in computer science and drawing, based in Houston, Texas. He has a passion for building extravagant silhouettes with his pieces, and building multimedia fashion showcases for them. He works on projects that mix his creative and technical knowledge to solve problems using unconventional means.',
+  infoImage: './assets/info-biruk.png',
+  infoImageAlt:
+    'Young Black man with glasses, pearl necklace, and patterned shirt; signature above on cream background, vintage portrait style',
   phone: '+18322787667',
   email: 'bgizaw8@gmail.com',
   instagram: 'https://www.instagram.com/birukssewingmachine?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr',

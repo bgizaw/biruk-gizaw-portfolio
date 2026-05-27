@@ -160,6 +160,8 @@ function bindColorTransitions() {
   }
 
   const update = () => {
+    if (isInfoPanelBgActive()) return;
+
     let activeArticle = null;
     let activeDistance = Infinity;
 
@@ -193,6 +195,7 @@ function setInfoOpen(open) {
   infoPanel.setAttribute('aria-hidden', String(!open));
   siteTop.classList.toggle('is-active', open);
   document.documentElement.classList.toggle('no-scroll', open);
+  setInfoPanelBackground(open);
   siteMenu?.updateToggleLabel();
 
   if (!open) {

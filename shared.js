@@ -66,13 +66,45 @@ function pickNavColor(backgroundColor) {
 }
 
 function setSiteNavColor(backgroundColor) {
+  if (infoPanelBgActive) {
+    document.documentElement.style.setProperty('--site-nav-color', '#000000');
+    return;
+  }
   document.documentElement.style.setProperty('--site-nav-color', pickNavColor(backgroundColor));
 }
+
+const INFO_PANEL_BG = { top: '#F0E8DC', bottom: '#E5D4C0' };
+
+let infoPanelBgActive = false;
+let savedPageBg = null;
 
 function setColors(top, bottom) {
   document.documentElement.style.setProperty('--bgFrom', top);
   document.documentElement.style.setProperty('--bgTo', bottom);
   setSiteNavColor(top);
+}
+
+function setInfoPanelBackground(open) {
+  infoPanelBgActive = open;
+  document.documentElement.classList.toggle('info-open', open);
+
+  if (open) {
+    const root = document.documentElement;
+    const inline = root.style;
+    const computed = getComputedStyle(root);
+    savedPageBg = {
+      top: inline.getPropertyValue('--bgFrom').trim() || computed.getPropertyValue('--bgFrom').trim(),
+      bottom: inline.getPropertyValue('--bgTo').trim() || computed.getPropertyValue('--bgTo').trim(),
+    };
+    setColors(INFO_PANEL_BG.top, INFO_PANEL_BG.bottom);
+  } else if (savedPageBg) {
+    setColors(savedPageBg.top, savedPageBg.bottom);
+    savedPageBg = null;
+  }
+}
+
+function isInfoPanelBgActive() {
+  return infoPanelBgActive;
 }
 
 function createImageWrap(
@@ -121,6 +153,18 @@ function getDetailUrl(index) {
   return `detail.html?id=${index}`;
 }
 
+function getPatchItem(id) {
+  const index = Number(id);
+  if (!Number.isInteger(index) || index < 0 || index >= PATCHES.length) {
+    return null;
+  }
+  return PATCHES[index];
+}
+
+function getPatchDetailUrl(index) {
+  return `patch-detail.html?id=${index}`;
+}
+
 function normalizePathname() {
   return (window.location.pathname || '').replace(/\\/g, '/').toLowerCase();
 }
@@ -133,8 +177,16 @@ function isIndexPage() {
   const path = normalizePathname();
   const href = normalizePageHref();
 
-  if (path.includes('patches') || path.includes('detail')) return false;
-  if (href.includes('patches.html') || href.includes('detail.html')) return false;
+  if (path.includes('patches') || path.includes('detail') || path.includes('patch-detail')) {
+    return false;
+  }
+  if (
+    href.includes('patches.html') ||
+    href.includes('detail.html') ||
+    href.includes('patch-detail.html')
+  ) {
+    return false;
+  }
 
   if (path.endsWith('/index.html') || href.endsWith('/index.html')) return true;
   if (path.endsWith('/index') || href.endsWith('/index')) return true;
