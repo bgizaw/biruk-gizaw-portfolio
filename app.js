@@ -74,6 +74,9 @@ function createPortfolioCard(item, index, ...children) {
   link.className = 'portfolio-card';
   link.href = getDetailUrl(index);
   link.setAttribute('aria-label', `View ${item.title}`);
+  link.addEventListener('click', () => {
+    stashPageId(PAGE_ID_STORAGE_KEYS.fashion, index);
+  });
   children.forEach((child) => link.appendChild(child));
   return link;
 }

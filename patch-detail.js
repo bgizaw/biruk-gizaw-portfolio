@@ -62,10 +62,6 @@ function createPatchGalleryArticle(item, imageOptions, layoutIndex, colorOptions
   return article;
 }
 
-function getPatchId() {
-  return new URLSearchParams(window.location.search).get('id');
-}
-
 function isVideoPatch(item, id) {
   const patchIndex = Number(id);
   return patchIndex === 0 || Boolean(item.youtubeId);
@@ -256,7 +252,7 @@ function bindDetailColorTransitions() {
   update();
 }
 
-const patchId = getPatchId();
+const patchId = parsePageId(PAGE_ID_STORAGE_KEYS.patch);
 const item = getPatchItem(patchId);
 
 initViewportMode();
