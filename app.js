@@ -62,11 +62,11 @@ function setColorsWithState(top, bottom) {
   setColors(top, bottom);
 }
 
-function createPortfolioCard(item, index, content) {
+function createPortfolioCard(item, index, ...children) {
   if (item.noDetail) {
     const card = document.createElement('div');
     card.className = 'portfolio-card portfolio-card--static';
-    card.appendChild(content);
+    children.forEach((child) => card.appendChild(child));
     return card;
   }
 
@@ -74,7 +74,10 @@ function createPortfolioCard(item, index, content) {
   link.className = 'portfolio-card';
   link.href = getDetailUrl(index);
   link.setAttribute('aria-label', `View ${item.title}`);
-  link.appendChild(content);
+  link.addEventListener('click', () => {
+    stashPageId(PAGE_ID_STORAGE_KEYS.fashion, index);
+  });
+  children.forEach((child) => link.appendChild(child));
   return link;
 }
 
@@ -89,7 +92,7 @@ function createHeroArticle(item, index) {
   inner.className = 'hero-inner';
   inner.appendChild(createImageWrap(item, { priority: true }));
 
-  figure.append(createPortfolioCard(item, index, inner), createCaption(item));
+  figure.appendChild(createPortfolioCard(item, index, inner, createCaption(item)));
   article.appendChild(figure);
   return article;
 }
@@ -105,9 +108,8 @@ function createPortfolioArticle(item, index) {
   article.dataset.bottomColor = item.bottomColor;
 
   const figure = document.createElement('figure');
-  figure.append(
-    createPortfolioCard(item, index, createImageWrap(item, { cover: true })),
-    createCaption(item),
+  figure.appendChild(
+    createPortfolioCard(item, index, createImageWrap(item, { cover: true }), createCaption(item)),
   );
   article.appendChild(figure);
 

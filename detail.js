@@ -575,10 +575,6 @@ function createDetailPortfolioArticle(item, imageOptions, layoutIndex, colorOpti
   return article;
 }
 
-function getOutfitId() {
-  return new URLSearchParams(window.location.search).get('id');
-}
-
 function createDetailHeroTitle(text) {
   const title = document.createElement('h1');
   title.className = 'detail-hero__dawn-title';
@@ -769,13 +765,13 @@ function bindDetailColorTransitions() {
   update();
 }
 
-const outfitId = getOutfitId();
+const outfitId = parsePageId(PAGE_ID_STORAGE_KEYS.fashion);
 const item = getMediaItem(outfitId);
 
 initViewportMode();
 
 if (!item) {
-  window.location.replace('index.html');
+  window.location.replace('/');
 } else {
   renderDetail(item, outfitId);
   populateInfoPanel();
