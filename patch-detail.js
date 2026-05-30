@@ -258,7 +258,7 @@ const item = getPatchItem(patchId);
 initViewportMode();
 
 if (!item || item.noDetail) {
-  window.location.replace('/patches');
+  window.location.replace('/patches.html');
 } else {
   if (isVideoPatch(item, patchId)) {
     renderPatchVideoDetail(item);
