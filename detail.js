@@ -771,7 +771,7 @@ const item = getMediaItem(outfitId);
 initViewportMode();
 
 if (!item) {
-  window.location.replace('index.html');
+  window.location.replace('/');
 } else {
   renderDetail(item, outfitId);
   populateInfoPanel();

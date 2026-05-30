@@ -5,7 +5,7 @@ function createSiteTitle({ link = false } = {}) {
   const heading = document.createElement('h1');
   if (link) {
     const anchor = document.createElement('a');
-    anchor.href = 'index.html';
+    anchor.href = '/';
     anchor.textContent = SITE.name;
     heading.appendChild(anchor);
   } else {
@@ -155,6 +155,7 @@ const PAGE_ID_STORAGE_KEYS = {
   patch: 'bg-patch-detail-id',
 };
 
+/** Use .html + hash; pair with serve.json cleanUrls:false to avoid 301s that drop ?id= / #hash on mobile. */
 function getDetailUrl(index) {
   return `detail.html#id=${index}`;
 }
