@@ -1,0 +1,6 @@
+{
+  "cleanUrls": false,
+  "directoryListing": false,
+  "unlisted": [".git", "node_modules"],
+  "rewrites": [{ "source": "/", "destination": "/index.html" }]
+}

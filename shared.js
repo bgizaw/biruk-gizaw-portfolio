@@ -5,7 +5,7 @@ function createSiteTitle({ link = false } = {}) {
   const heading = document.createElement('h1');
   if (link) {
     const anchor = document.createElement('a');
-    anchor.href = 'index.html';
+    anchor.href = '/';
     anchor.textContent = SITE.name;
     heading.appendChild(anchor);
   } else {
@@ -149,8 +149,69 @@ function getMediaItem(id) {
   return MEDIA[index];
 }
 
+/** Survives 301s that strip ?query (common on mobile hosts / clean-URL redirects). */
+const PAGE_ID_STORAGE_KEYS = {
+  fashion: 'bg-fashion-detail-id',
+  patch: 'bg-patch-detail-id',
+};
+
+/** Use .html + hash; pair with serve.json cleanUrls:false to avoid 301s that drop ?id= / #hash on mobile. */
 function getDetailUrl(index) {
-  return `detail.html?id=${index}`;
+  return `detail.html#id=${index}`;
+}
+
+function parsePageId(storageKey) {
+  const fromQuery = new URLSearchParams(window.location.search).get('id');
+  if (fromQuery != null && fromQuery !== '') {
+    if (storageKey) clearStashedPageId(storageKey);
+    return fromQuery;
+  }
+
+  const hash = window.location.hash.slice(1);
+  if (hash) {
+    let fromHash = null;
+    if (hash.startsWith('id=')) {
+      fromHash = hash.slice(3);
+    } else {
+      fromHash = new URLSearchParams(hash.replace(/^\?/, '')).get('id');
+    }
+    if (fromHash != null && fromHash !== '') {
+      if (storageKey) clearStashedPageId(storageKey);
+      return fromHash;
+    }
+  }
+
+  if (!storageKey) return null;
+
+  try {
+    const stored = sessionStorage.getItem(storageKey);
+    if (stored != null && stored !== '') {
+      sessionStorage.removeItem(storageKey);
+      return stored;
+    }
+  } catch (_) {
+    /* private mode / blocked storage */
+  }
+
+  return null;
+}
+
+function stashPageId(storageKey, id) {
+  if (!storageKey) return;
+  try {
+    sessionStorage.setItem(storageKey, String(id));
+  } catch (_) {
+    /* ignore */
+  }
+}
+
+function clearStashedPageId(storageKey) {
+  if (!storageKey) return;
+  try {
+    sessionStorage.removeItem(storageKey);
+  } catch (_) {
+    /* ignore */
+  }
 }
 
 function getPatchItem(id) {
@@ -162,7 +223,7 @@ function getPatchItem(id) {
 }
 
 function getPatchDetailUrl(index) {
-  return `patch-detail.html?id=${index}`;
+  return `patch-detail.html#id=${index}`;
 }
 
 function normalizePathname() {

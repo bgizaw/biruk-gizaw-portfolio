@@ -56,11 +56,11 @@ function createPatchCaption(item) {
   return caption;
 }
 
-function createPatchCard(item, index, content) {
+function createPatchCard(item, index, ...children) {
   if (item.noDetail) {
     const card = document.createElement('div');
     card.className = 'portfolio-card portfolio-card--static';
-    card.appendChild(content);
+    children.forEach((child) => card.appendChild(child));
     return card;
   }
 
@@ -68,7 +68,10 @@ function createPatchCard(item, index, content) {
   link.className = 'portfolio-card';
   link.href = getPatchDetailUrl(index);
   link.setAttribute('aria-label', `View ${item.title}`);
-  link.appendChild(content);
+  link.addEventListener('click', () => {
+    stashPageId(PAGE_ID_STORAGE_KEYS.patch, index);
+  });
+  children.forEach((child) => link.appendChild(child));
   return link;
 }
 
@@ -83,7 +86,7 @@ function createPatchHeroArticle(item, index) {
   inner.className = 'hero-inner';
   inner.appendChild(createImageWrap(item, { priority: true, plain: true }));
 
-  figure.append(createPatchCard(item, index, inner), createPatchCaption(item));
+  figure.appendChild(createPatchCard(item, index, inner, createPatchCaption(item)));
   article.appendChild(figure);
   return article;
 }
@@ -99,9 +102,13 @@ function createPatchArticle(item, index) {
   article.dataset.bottomColor = item.bottomColor;
 
   const figure = document.createElement('figure');
-  figure.append(
-    createPatchCard(item, index, createImageWrap(item, { cover: true, plain: true })),
-    createPatchCaption(item),
+  figure.appendChild(
+    createPatchCard(
+      item,
+      index,
+      createImageWrap(item, { cover: true, plain: true }),
+      createPatchCaption(item),
+    ),
   );
   article.appendChild(figure);
   return article;

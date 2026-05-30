@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve ."
+  },
+  "dependencies": {
+    "npx": "^10.2.2",
+    "serve": "^14.2.6"
+  }
+}
