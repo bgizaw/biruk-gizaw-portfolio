@@ -295,6 +295,6 @@ const SITE = {
   infoImageAlt:
     'Young Black man with glasses, pearl necklace, and patterned shirt; signature above on cream background, vintage portrait style',
   phone: '+18322787667',
-  email: 'bgizaw8@gmail.com',
+  email: 'birukssewingmachine@birukgizaw.com',
   instagram: 'https://www.instagram.com/birukssewingmachine?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr',
 };
