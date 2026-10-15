@@ -3,4 +3,4 @@ Thumbs.db
 desktop.ini
 *.log
 .cursor/
-node_modules/
+/node_modules

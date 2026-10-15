@@ -25,6 +25,95 @@ const ALIGNMENTS = (() => {
 const MEDIA = [
   {
     aside: '2026',
+    title: 'Learn more about DAWN Fashion Showcase',
+    topColor: '#B20000',
+    bottomColor: '#F04D4D',
+    dominantColor: '#B20000',
+    url: './assets/dawn-fashion-show.png',
+    alt: 'DAWN Blaremont Fashion Show poster with gold typography, red textured background, and black silhouette',
+    gallery: [
+      {
+        src: './assets/dawn-the-sun.png',
+        alt: 'Model walking a red carpet runway in a sheer cream off-shoulder outfit with red and gold patterned sash and lace skirt at an outdoor dusk fashion show',
+        topColor: '#F5EDE0',
+        bottomColor: '#B20000',
+        dominantColor: '#F5EDE0',
+        poem: `Bright star,
+casting life onto the glowing, warm bodies
+of the earth.
+Surrounding us in your golden energy,
+you breathe us into being.
+With celestial power beyond our knowing,
+you cast your light deep into our souls
+And we are enriched`,
+      },
+      {
+        src: './assets/dawn-soul.png',
+        alt: 'Model on a red carpet runway in Canadian tuxedo double denim at an outdoor dusk fashion show — SOUL',
+        topColor: '#2A4A7A',
+        bottomColor: '#B20000',
+        dominantColor: '#B20000',
+        poem: `Inconceivably powerful.
+Your voice shines like the sun.
+Though it may be tested,
+Pulled through the highest mountains,
+And thrown into the lowest valleys,
+You persist.
+Do as you do,
+And let your voice ring.`,
+        musicSrc: './assets/dawn-sunset.mp3',
+        musicCover: './assets/dawn-sunset-cover.png',
+        musicTitle: 'Sunset',
+        musicArtist: 'Stevie Wonder',
+      },
+      {
+        src: './assets/dawn-wind.png',
+        alt: 'Model walking a red carpet runway in open white lace shirt, high-waisted wide white trousers, and white sneakers at an outdoor night fashion show — WIND',
+        topColor: '#F5EDE0',
+        bottomColor: '#B20000',
+        dominantColor: '#F5EDE0',
+        poem: `Ringing through the trees,
+Whistling currents of the sky,
+Rustling, winding, soaring.
+You mark our planet with life,
+and make your presence known in its absence.
+Leaping, flowing, twirling,
+you produce the harmonies of nature,
+and allow us to sing.`,
+        musicSrc: './assets/dawn-butterflies.mp3',
+        musicCover: './assets/dawn-butterflies-cover.png',
+        musicTitle: 'Butterflies',
+        musicArtist: 'Michael Jackson',
+      },
+      {
+        src: './assets/dawn-the-moon.png',
+        alt: 'Model walking a red carpet runway in sheer glitter mesh top, high-waisted wide black pinstripe trousers, and black boots at an outdoor night fashion show — THE MOON',
+        topColor: '#1A1A1A',
+        bottomColor: '#B20000',
+        dominantColor: '#B20000',
+        poem: `Pulling and pushing,
+Jostling us as if to tell a message
+You shine and reflect a
+not quite golden light,
+Nevertheless, you beam
+You're our lighthouse,
+You grant us comfort,
+And light in the darkness`,
+        musicSrc: './assets/dawn-higher.mp3',
+        musicCover: './assets/dawn-higher-cover.png',
+        musicTitle: 'Higher',
+        musicArtist: "D'Angelo",
+      },
+    ],
+    detailEmptyHero: true,
+    detailHeroTitle: 'DAWN',
+    dawnMusicSrc: './assets/dawn-eternal-sunshine.mp3',
+    dawnMusicCover: './assets/dawn-eternal-sunshine-cover.png',
+    dawnMusicTitle: 'Eternal Sunshine',
+    dawnMusicArtist: 'Lou Val',
+  },
+  {
+    aside: '2026',
     title: 'Dark selvedge denim Canadian tuxedo',
     topColor: '#0A0A0F',
     bottomColor: '#B20000',
@@ -130,95 +219,7 @@ const MEDIA = [
       },
     ],
   },
-  {
-    aside: '2026',
-    title: 'Learn more about DAWN Fashion Showcase',
-    topColor: '#B20000',
-    bottomColor: '#F04D4D',
-    dominantColor: '#B20000',
-    url: './assets/dawn-fashion-show.png',
-    alt: 'DAWN Blaremont Fashion Show poster with gold typography, red textured background, and black silhouette',
-    gallery: [
-      {
-        src: './assets/dawn-the-sun.png',
-        alt: 'Model walking a red carpet runway in a sheer cream off-shoulder outfit with red and gold patterned sash and lace skirt at an outdoor dusk fashion show',
-        topColor: '#F5EDE0',
-        bottomColor: '#B20000',
-        dominantColor: '#F5EDE0',
-        poem: `Bright star,
-casting life onto the glowing, warm bodies
-of the earth.
-Surrounding us in your golden energy,
-you breathe us into being.
-With celestial power beyond our knowing,
-you cast your light deep into our souls
-And we are enriched`,
-      },
-      {
-        src: './assets/dawn-soul.png',
-        alt: 'Model on a red carpet runway in Canadian tuxedo double denim at an outdoor dusk fashion show — SOUL',
-        topColor: '#2A4A7A',
-        bottomColor: '#B20000',
-        dominantColor: '#B20000',
-        poem: `Inconceivably powerful.
-Your voice shines like the sun.
-Though it may be tested,
-Pulled through the highest mountains,
-And thrown into the lowest valleys,
-You persist.
-Do as you do,
-And let your voice ring.`,
-        musicSrc: './assets/dawn-sunset.mp3',
-        musicCover: './assets/dawn-sunset-cover.png',
-        musicTitle: 'Sunset',
-        musicArtist: 'Stevie Wonder',
-      },
-      {
-        src: './assets/dawn-wind.png',
-        alt: 'Model walking a red carpet runway in open white lace shirt, high-waisted wide white trousers, and white sneakers at an outdoor night fashion show — WIND',
-        topColor: '#F5EDE0',
-        bottomColor: '#B20000',
-        dominantColor: '#F5EDE0',
-        poem: `Ringing through the trees,
-Whistling currents of the sky,
-Rustling, winding, soaring.
-You mark our planet with life,
-and make your presence known in its absence.
-Leaping, flowing, twirling,
-you produce the harmonies of nature,
-and allow us to sing.`,
-        musicSrc: './assets/dawn-butterflies.mp3',
-        musicCover: './assets/dawn-butterflies-cover.png',
-        musicTitle: 'Butterflies',
-        musicArtist: 'Michael Jackson',
-      },
-      {
-        src: './assets/dawn-the-moon.png',
-        alt: 'Model walking a red carpet runway in sheer glitter mesh top, high-waisted wide black pinstripe trousers, and black boots at an outdoor night fashion show — THE MOON',
-        topColor: '#1A1A1A',
-        bottomColor: '#B20000',
-        dominantColor: '#B20000',
-        poem: `Pulling and pushing,
-Jostling us as if to tell a message
-You shine and reflect a
-not quite golden light,
-Nevertheless, you beam
-You're our lighthouse,
-You grant us comfort,
-And light in the darkness`,
-        musicSrc: './assets/dawn-higher.mp3',
-        musicCover: './assets/dawn-higher-cover.png',
-        musicTitle: 'Higher',
-        musicArtist: "D'Angelo",
-      },
-    ],
-    detailEmptyHero: true,
-    detailHeroTitle: 'DAWN',
-    dawnMusicSrc: './assets/dawn-eternal-sunshine.mp3',
-    dawnMusicCover: './assets/dawn-eternal-sunshine-cover.png',
-    dawnMusicTitle: 'Eternal Sunshine',
-    dawnMusicArtist: 'Lou Val',
-  },
+  
   {
     aside: '2026',
     title: 'Baggy, straight pants made from lightweight brown cotton fabric',
