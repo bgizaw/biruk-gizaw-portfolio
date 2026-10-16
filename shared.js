@@ -81,6 +81,7 @@ let savedPageBg = null;
 function setColors(top, bottom) {
   document.documentElement.style.setProperty('--bgFrom', top);
   document.documentElement.style.setProperty('--bgTo', bottom);
+  document.documentElement.style.setProperty('--process-color', pickNavColor(bottom));
   setSiteNavColor(top);
 }
 

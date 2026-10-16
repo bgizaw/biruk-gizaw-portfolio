@@ -582,6 +582,63 @@ function createDetailHeroTitle(text) {
   return title;
 }
 
+//added for inspo toggle
+function createProcessToggle(process) {
+  const wrap = document.createElement('section');
+  wrap.className = 'process';
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'process__toggle';
+  button.setAttribute('aria-expanded', 'false');
+  button.setAttribute('aria-controls', 'process-panel');
+
+  const label = document.createElement('span');
+  label.textContent = process.label ?? 'Look into the process';
+  const icon = document.createElement('span');
+  icon.className = 'process__icon';
+  icon.setAttribute('aria-hidden', 'true');
+  button.append(label, icon);
+
+  const panel = document.createElement('div');
+  panel.className = 'process__panel';
+  panel.id = 'process-panel';
+  panel.inert = true;
+
+  const inner = document.createElement('div');
+  inner.className = 'process__inner';
+  const content = document.createElement('div');
+  content.className = 'process__content';
+
+  (process.entries ?? []).forEach((entry) => {
+    const block = document.createElement('div');
+    block.className = 'process__entry';
+    if (entry.title) {
+      const h = document.createElement('h3');
+      h.textContent = entry.title;
+      block.appendChild(h);
+    }
+    const p = document.createElement('p');
+    p.textContent = entry.text;
+    block.appendChild(p);
+    content.appendChild(block);
+  });
+
+  inner.appendChild(content);
+  panel.appendChild(inner);
+  wrap.append(button, panel);
+
+  button.addEventListener('click', () => {
+    const open = !wrap.classList.contains('is-open');
+    wrap.classList.toggle('is-open', open);
+    button.setAttribute('aria-expanded', String(open));
+    panel.inert = !open;
+    // if (open) setTimeout(() => wrap.scrollIntoView({ behavior: 'smooth', block: 'end' }), 400);
+  });
+
+  return wrap;
+}
+
 function renderDetail(item, id) {
   const pageTitle = item.detailHeroTitle ?? item.title;
   document.title = `${pageTitle} — ${SITE.name}`;
@@ -698,6 +755,10 @@ function renderDetail(item, id) {
       root.appendChild(article);
     }
   });
+   if (item.process) {
+    root.classList.add('has-process');
+    root.appendChild(createProcessToggle(item.process));
+   }
 }
 
 function populateInfoPanel() {

@@ -25,6 +25,90 @@ const ALIGNMENTS = (() => {
 const MEDIA = [
   {
     aside: '2026',
+    title: 'Zoot Suit Shoot',
+    heroZoomScale: 1,
+    topColor: '#591d27',
+    bottomColor: '#cd2438',
+    dominantColor: '#ea1515',
+    url: './assets/BM_FALL COVER.2026.JPG',
+    alt: 'DAWN Blaremont Fashion Show poster with gold typography, red textured background, and black silhouette',
+    
+    gallery: [
+      {
+        src: './assets/zoot-cig.jpg',
+        alt: '',
+        topColor: '#F5EDE0',
+        bottomColor: '#B20000',
+        dominantColor: '#F5EDE0',
+      },
+      {
+        src: './assets/El.ZOOT.FINAL.ONE.JPG',
+        alt: '',
+        topColor: '#F5EDE0',
+        bottomColor: '#B20000',
+        dominantColor: '#F5EDE0',
+      },
+      {
+        src: './assets/AARON.FINAL.JPG',
+        alt: '',
+        topColor: '#F5EDE0',
+        bottomColor: '#121111',
+        dominantColor: '#F5EDE0',
+      
+      },
+      {
+        src: './assets/ASH.brick.FINAL.JPG',
+        alt: '',
+        topColor: '#181818',
+        bottomColor: '#dad5d5',
+        dominantColor: '#F5EDE0',
+      
+      },
+      {
+        src: './assets/Ashley.final.JPG',
+        alt: '',
+        topColor: '#131312',
+        bottomColor: '#e4dc6b',
+        dominantColor: '#F5EDE0',
+      
+      },
+      {
+        src: './assets/STREETS.FINAL.JPG',
+        alt: '',
+        topColor: '#ffffff',
+        bottomColor: '#000000',
+        dominantColor: '#F5EDE0',
+      
+      },
+      {
+        src: './assets/hadji-still.jpg',
+        alt: '',
+        topColor: '#d4dc68',
+        bottomColor: '#be1010',
+        dominantColor: '#F5EDE0',
+      
+      },
+      {
+        src: './assets/aaron-hadji-still.jpg',
+        alt: '',
+        topColor: '#9bca59',
+        bottomColor: '#000000',
+        dominantColor: '#F5EDE0',
+      
+      },
+      
+    ],
+    process: {
+      label: 'Look into the process',
+      entries: [
+        { title: 'The jacket', text: 'Inspiration behind this piece goes here...' },
+        { title: 'The trousers', text: 'Inspiration behind this piece goes here...' },
+      ],
+    },   
+  },
+
+  {
+    aside: '2026',
     title: 'Learn more about DAWN Fashion Showcase',
     topColor: '#B20000',
     bottomColor: '#F04D4D',
@@ -111,10 +195,17 @@ And light in the darkness`,
     dawnMusicCover: './assets/dawn-eternal-sunshine-cover.png',
     dawnMusicTitle: 'Eternal Sunshine',
     dawnMusicArtist: 'Lou Val',
+    process: {
+  entries: [
+    { title: 'Piece name', text: 'What inspired it...' },
+    { title: 'Another piece', text: 'What inspired it...' },
+  ],
+},
   },
   {
     aside: '2026',
     title: 'Dark selvedge denim Canadian tuxedo',
+    heroZoomScale: 1,
     topColor: '#0A0A0F',
     bottomColor: '#B20000',
     dominantColor: '#B20000',
@@ -134,6 +225,12 @@ And light in the darkness`,
         alt: 'Man with bleached curly hair in dark cropped denim jacket, sunglasses tucked in front, silver jewelry, outdoor night with fairy lights',
       },
     ],
+    process: {
+  entries: [
+    { title: 'Piece name', text: 'What inspired it...' },
+    { title: 'Another piece', text: 'What inspired it...' },
+  ],
+},
   },
   {
     aside: '2026',
@@ -168,6 +265,12 @@ And light in the darkness`,
         dominantColor: '#7B1113',
       },
     ],
+    process: {
+  entries: [
+    { title: 'Piece name', text: 'What inspired it...' },
+    { title: 'Another piece', text: 'What inspired it...' },
+  ],
+},
   },
   {
     aside: '2026',
@@ -188,6 +291,12 @@ And light in the darkness`,
         dominantColor: '#0F1410',
       },
     ],
+    process: {
+  entries: [
+    { title: 'Piece name', text: 'What inspired it...' },
+    { title: 'Another piece', text: 'What inspired it...' },
+  ],
+},
   },
   {
     aside: '2026',
@@ -218,6 +327,12 @@ And light in the darkness`,
         dominantColor: '#B20000',
       },
     ],
+    process: {
+  entries: [
+    { title: 'Piece name', text: 'What inspired it...' },
+    { title: 'Another piece', text: 'What inspired it...' },
+  ],
+},
   },
   
   {
