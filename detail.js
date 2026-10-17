@@ -538,6 +538,20 @@ function createDawnMusicPlayer({ src, cover, title = 'Uiverse Anthem', artist = 
   return wrap;
 }
 
+
+function trackImageRatio(figure) {
+  const img = figure.querySelector('img');
+  if (!img) return;
+  const update = () => {
+    if (img.naturalWidth && img.naturalHeight) {
+      figure.style.setProperty('--img-ratio', String(img.naturalWidth / img.naturalHeight));
+    }
+  };
+  img.addEventListener('load', update);
+  if (img.complete) update();
+}
+
+
 function createDetailPortfolioArticle(item, imageOptions, layoutIndex, colorOptions = {}) {
   const alignment = ALIGNMENTS[layoutIndex % ALIGNMENTS.length];
   const refItem = MEDIA[layoutIndex];
@@ -570,6 +584,7 @@ function createDetailPortfolioArticle(item, imageOptions, layoutIndex, colorOpti
     }
   }
   figure.appendChild(imageWrap);
+  trackImageRatio(figure);
   article.appendChild(figure);
 
   return article;
@@ -676,6 +691,7 @@ function renderDetail(item, id) {
       createImageWrap(item, { priority: true, plain: Boolean(item.detailHeroPlain) }),
     );
     figure.appendChild(createDetailCaption(item));
+    trackImageRatio(figure);
     hero.appendChild(figure);
   }
   root.appendChild(hero);

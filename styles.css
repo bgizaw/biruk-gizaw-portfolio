@@ -1646,3 +1646,53 @@ article.portfolio .portfolio-card {
   margin-bottom: 0;
   }
 }
+
+
+
+
+/* Detail page: keep each photo fully on screen (no scrolling through one image) */
+.detail-page {
+  --detail-figure-max: 60%;
+  --detail-fit-pad: 130px; /* space kept free above/below each gallery photo */
+}
+
+.detail-hero {
+  --hero-figure-max: min(80%, 960px);
+  --hero-fit-pad: calc(var(--menu-dropdown-clearance) + 90px); /* menu space + caption */
+}
+
+.detail-hero--plain {
+  --hero-figure-max: min(92%, 1100px);
+}
+
+@media (max-width: 720px) {
+  .detail-page {
+    --detail-figure-max: min(88%, 480px);
+    --detail-fit-pad: 110px;
+  }
+
+  .detail-hero {
+    --hero-figure-max: min(92%, 520px);
+  }
+}
+
+@media (max-width: 380px) {
+  .detail-page {
+    --detail-figure-max: 94%;
+  }
+}
+
+/* --img-ratio (width / height) is set in detail.js once each image loads */
+.detail-page:not(.patch-detail-page) :not(.detail-gallery-row--dawn) > article.portfolio > figure {
+  width: min(var(--detail-figure-max), calc((100vh - var(--detail-fit-pad)) * var(--img-ratio, 0.8)));
+  width: min(var(--detail-figure-max), calc((100svh - var(--detail-fit-pad)) * var(--img-ratio, 0.8)));
+}
+
+.detail-page:not(.patch-detail-page) .detail-hero figure {
+  width: min(var(--hero-figure-max), calc((100vh - var(--hero-fit-pad)) * var(--img-ratio, 0.8)));
+  width: min(var(--hero-figure-max), calc((100svh - var(--hero-fit-pad)) * var(--img-ratio, 0.8)));
+}
+
+
+
+

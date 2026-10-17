@@ -101,7 +101,7 @@ const MEDIA = [
     process: {
       label: 'Look into the process',
       entries: [
-        { title: 'The jacket', text: 'Inspiration behind this piece goes here...' },
+        { title: 'Inspiration:', text: 'The motivation behind this project and photoshoot is to express a bridge between Black and Latino culture, namely through their shared connection to the zoot suit subculture. The zoot suits originated in Harlem in the 1930s, and it is believed that they pulled some influence from the London Drape suits, popularized by the Duke of Windsor, Edward VIII. Zoot suit silhouettes kept ballooning, just like their popularity, especially in the Harlem jazz scene. Entertainers like Cab Calloway being the most influential in its spread. The style grew and spread into Los Angeles, namely through the youth pachuco culture.' },
         { title: 'The trousers', text: 'Inspiration behind this piece goes here...' },
       ],
     },   

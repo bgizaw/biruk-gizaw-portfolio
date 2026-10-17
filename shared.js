@@ -108,6 +108,9 @@ function isInfoPanelBgActive() {
   return infoPanelBgActive;
 }
 
+
+
+
 function createImageWrap(
   item,
   { cover = false, priority = false, plain = false, src, alt, dominantColor } = {},
