@@ -35,7 +35,7 @@ const MEDIA = [
     
     gallery: [
       {
-        src: './assets/zoot-cig.jpg',
+        src: './assets/zoot-cig.JPG',
         alt: '',
         topColor: '#F5EDE0',
         bottomColor: '#B20000',
