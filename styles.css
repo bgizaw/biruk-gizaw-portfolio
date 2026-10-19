@@ -1620,6 +1620,8 @@ article.portfolio .portfolio-card {
   font-size: inherit;
   font-style: italic;
   font-weight: 400;
+  text-decoration: underline;
+  /* text-underline-offset: 4px;  */
 }
 
 .process__entry p {

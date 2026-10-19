@@ -672,7 +672,7 @@ function renderDetail(item, id) {
     }
   } else if (item.detailHeroPlain) {
     hero.classList.add('detail-hero--plain');
-  } else if (id === '1' || id === '2' || id === '3') {
+  } else if (item.heroCenterZoom) {
     hero.classList.add('detail-hero--center-zoom');
   }
   if (item.heroZoomScale) {
@@ -720,7 +720,7 @@ function renderDetail(item, id) {
       colorOptions,
     );
 
-    if (id === '4') {
+    if (item.dawnLayout) {
       const row = document.createElement('div');
       row.className = 'detail-gallery-row detail-gallery-row--dawn';
       if (index % 2 === 1) {

@@ -101,8 +101,19 @@ const MEDIA = [
     process: {
       label: 'Look into the process',
       entries: [
-        { title: 'Inspiration:', text: 'The motivation behind this project and photoshoot is to express a bridge between Black and Latino culture, namely through their shared connection to the zoot suit subculture. The zoot suits originated in Harlem in the 1930s, and it is believed that they pulled some influence from the London Drape suits, popularized by the Duke of Windsor, Edward VIII. Zoot suit silhouettes kept ballooning, just like their popularity, especially in the Harlem jazz scene. Entertainers like Cab Calloway being the most influential in its spread. The style grew and spread into Los Angeles, namely through the youth pachuco culture.' },
-        { title: 'The trousers', text: 'Inspiration behind this piece goes here...' },
+        { title: 'Inspiration:', text: `The motivation behind this project and photoshoot is to express a bridge between Black and Latino culture, namely through their shared connection to the zoot suit subculture. 
+          The zoot suits originated in Harlem in the 1930s, and it is believed that they pulled some influence from the London Drape suits, popularized by the Duke of Windsor, Edward VIII. Zoot suit silhouettes kept 
+          ballooning, just like their popularity, especially in the Harlem jazz scene. Entertainers like Cab Calloway being the most influential in its spread. The style grew and spread into jazz clubs in Los Angeles 
+          and influenced the inception of Pachuco culture. The Mexican-American youth in LA rebelled from both American and Mexican cultures alike as pachucos, wearing these suits out to enjoy the nightlife and forget 
+          about their worries. Once the second world war began and the US became involved in the conflict, the country began rationing its resources, one of those being fabric. Zoot suits, with their balloon-like pants 
+          and extra long jackets, were looked at as wasteful by the monolithic patriotism of white individuals in the country. The rising racial tensions between white and the Mexican-American youth prior to the war and 
+          the portrayal of these youth in the media converged into a 5 day conflict called the Zoot Suit Riots of 1943. During this conflict, a group of armed servicemen went around and brutally beat anyone they saw outside 
+          wearing a zoot suit, and sometimes anyone who seemed to be Mexican. So then began a two sided conflict between zoot suiters from different marginalized communities (Mexican, Black, Filipino) and these white servicemen. 
+          It ultimately ended with the servicemen being restricted from entering LA and zoot suits becoming illegal to wear in the streets. However Pachuco culture did not die, actually far from it. These Pachucos continued to 
+          express themselves using these suits underground, actively rebelling against the government. ` },
+
+        { title: 'Red Zoot Suit', text: `This piece acts as the centerpiece of this photoshoot and its purpose is to be as loud as possible. The message of rebellion is only as loud as its carrier. The balloon pants are inspired 
+          from a traditional Zoot Suit pattern preserved and made accessible by the LACMA. The zoot style is defined by its baggy silhouette but also its precise tailoring at the waist, adding some undulation to the silhouette.` },
       ],
     },   
   },
@@ -146,7 +157,7 @@ You persist.
 Do as you do,
 And let your voice ring.`,
         musicSrc: './assets/dawn-sunset.mp3',
-        musicCover: './assets/dawn-sunset-cover.png',
+        musicCover: './assets/music/covers/dawn-sunset-cover.png',
         musicTitle: 'Sunset',
         musicArtist: 'Stevie Wonder',
       },
@@ -165,7 +176,7 @@ Leaping, flowing, twirling,
 you produce the harmonies of nature,
 and allow us to sing.`,
         musicSrc: './assets/dawn-butterflies.mp3',
-        musicCover: './assets/dawn-butterflies-cover.png',
+        musicCover: './assets/music/covers/dawn-butterflies-cover.png',
         musicTitle: 'Butterflies',
         musicArtist: 'Michael Jackson',
       },
@@ -184,15 +195,16 @@ You're our lighthouse,
 You grant us comfort,
 And light in the darkness`,
         musicSrc: './assets/dawn-higher.mp3',
-        musicCover: './assets/dawn-higher-cover.png',
+        musicCover: './assets/music/covers/dawn-higher-cover.png',
         musicTitle: 'Higher',
         musicArtist: "D'Angelo",
       },
     ],
     detailEmptyHero: true,
     detailHeroTitle: 'DAWN',
+    dawnLayout: true,
     dawnMusicSrc: './assets/dawn-eternal-sunshine.mp3',
-    dawnMusicCover: './assets/dawn-eternal-sunshine-cover.png',
+    dawnMusicCover: './assets/music/covers/dawn-eternal-sunshine-cover.png',
     dawnMusicTitle: 'Eternal Sunshine',
     dawnMusicArtist: 'Lou Val',
     process: {
