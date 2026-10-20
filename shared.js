@@ -159,12 +159,23 @@ function createImageWrap(
   img.loading = priority ? 'eager' : 'lazy';
   img.decoding = 'async';
 
+  // Lets CSS cap the figure width so the image never exceeds --max-img-height.
+  const applyAspect = () => {
+    const article = wrap.closest('article');
+    if (article && img.naturalWidth && img.naturalHeight) {
+      article.style.setProperty('--img-aspect', String(img.naturalWidth / img.naturalHeight));
+    }
+  };
+
   img.addEventListener('load', () => {
     wrap.classList.add('is-loaded');
+    applyAspect();
   });
 
   if (img.complete) {
     wrap.classList.add('is-loaded');
+    // Wrap isn't attached to the page yet, so wait a frame before looking up the article.
+    requestAnimationFrame(applyAspect);
   }
 
   if (plain) {

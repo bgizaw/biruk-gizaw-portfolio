@@ -118,6 +118,67 @@ const MEDIA = [
     },   
   },
 
+{
+    aside: '2026',
+    title: 'Blaremont Mag Fullform Bag in Crimson',
+    heroZoomScale: 1,
+    topColor: '#0A0A0F',
+    bottomColor: '#B20000',
+    dominantColor: '#B20000',
+    url: './assets/THE.BM.BAG.ALYSSA.JPG',
+    alt: 'Female model holding large red shoulder bag. The letters BM are in red on the left.',
+    gallery: [
+      {
+        src: './assets/JOLENE.BM_BAG.4.3.JPG',
+        alt: 'Black woman holding large red shoulder bag and is looking directly at the camera',
+        topColor: '#f6e5ae',
+        bottomColor: '#c72e2e',
+        dominantColor: '#0F1410',
+      },
+
+      {
+        src: './assets/CHIM.BAG-FINAL_2.JPG',
+        alt: 'Black woman holding large red shoulder bag and is looking directly at the camera',
+        topColor: '#f6e5ae',
+        bottomColor: '#c72e2e',
+        dominantColor: '#0F1410',
+      },
+
+      {
+        src: './assets/BM_backshot.final.JPG',
+        alt: 'Behind shot of black woman holding large red bag with right hand; in room with curtains',
+        topColor: '#dac581',
+        bottomColor: '#620909',
+        dominantColor: '#0F1410',
+      },
+
+      {
+        src: './assets/BM_BAGS3.fin.JPG',
+        alt: 'Side shot of black woman holding large red bag with left hand; leaning on wall; in room with curtains',
+        topColor: '#dac581',
+        bottomColor: '#620909',
+        dominantColor: '#0F1410',
+      },
+
+      {
+        src: './assets/BM_BAG_S2.JPG',
+        alt: 'Front shot of black woman holding large red bag with left hand; sitting on ground and leaning on wall',
+        topColor: '#dac581',
+        bottomColor: '#620909',
+        dominantColor: '#0F1410',
+      },
+
+
+    ],
+    process: {
+  entries: [
+    { title: 'Piece name', text: 'What inspired it...' },
+    { title: 'Another piece', text: 'What inspired it...' },
+  ],
+},
+  },
+
+
   {
     aside: '2026',
     title: 'Learn more about DAWN Fashion Showcase',

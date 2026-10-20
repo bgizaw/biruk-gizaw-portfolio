@@ -424,7 +424,7 @@ article.portfolio.is-top {
 
 article.portfolio figure {
   position: relative;
-  width: 60%;
+  width: min(60%, calc(var(--max-img-height, 80vh) * var(--img-aspect, 100)));
 }
 
 article.portfolio figure img {
@@ -1289,8 +1289,8 @@ article.portfolio .portfolio-card {
     height: min(70vh, 520px);
   }
 
-  article.portfolio figure {
-    width: min(88%, 480px);
+    article.portfolio figure {
+    width: min(88%, 480px, calc(var(--max-img-height, 80vh) * var(--img-aspect, 100)));
   }
 
   article.portfolio figure figcaption,
