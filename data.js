@@ -25,7 +25,7 @@ const ALIGNMENTS = (() => {
 const MEDIA = [
   {
     aside: '2026',
-    title: 'Zoot Suit Shoot',
+    title: 'Zoot Suit Modern Rendition',
     heroZoomScale: 1,
     topColor: '#591d27',
     bottomColor: '#cd2438',
